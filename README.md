@@ -28,6 +28,10 @@ Quantumult X 等客户端即可。
 | V2Ray (vmess/vless) | [sub/by-protocol/vmess.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/vmess.txt) |
 | Trojan | [sub/by-protocol/trojan.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/trojan.txt) |
 | Shadowsocks | [sub/by-protocol/ss.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/ss.txt) |
+| 低延迟/快速节点（≤150ms） | [sub/quality/fast.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/fast.txt) |
+| 中延迟节点（151-300ms） | [sub/quality/medium.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/medium.txt) |
+| 高延迟节点（>300ms） | [sub/quality/slow.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/slow.txt) |
+| 不可达节点 | [sub/quality/unreachable.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/unreachable.txt) |
 
 把链接里的 `jiuzihe36/free-vpn-sub` 替换成自己的 GitHub 用户名和仓库名即可。
 如果你不改仓库名，也可以通过仓库设置里的 Pages 或 GitHub raw 域名获得同样的链接。
@@ -36,9 +40,12 @@ Quantumult X 等客户端即可。
 
 ```bash
 python3 scripts/aggregate.py
+python3 scripts/probe.py --max-nodes 20000 --concurrency 120
 ```
 
-脚本会读取 `data/sources.json` 里的公开订阅源，自动去重、分类，并写入 `sub/`。
+第一个脚本会读取 `data/sources.json` 里的公开订阅源，自动去重、分类，并写入
+`sub/`。第二个脚本会对聚合出的节点做 TCP 延迟探测，再生成按延迟分好的质量
+文件。
 
 ## 数据结构
 
@@ -63,6 +70,12 @@ sub/
     ├── youtube.txt
     ├── tiktok.txt
     └── streaming.txt
+└── quality/                     # 按延迟/可达性分
+    ├── fast.txt                 # ≤150ms
+    ├── medium.txt               # 151-300ms
+    ├── slow.txt                 # >300ms
+    ├── unreachable.txt
+    └── probe.csv                # 探测明细
 ```
 
 ## 标签是怎么判定的

@@ -17,7 +17,12 @@ jobs:
         with:
           python-version: "3.11"
       - name: Run aggregator
-        run: python scripts/aggregate.py
+        run: |
+          python scripts/aggregate.py
+          python scripts/probe.py --max-nodes "$MAX_PROBE_NODES" --concurrency "$PROBE_CONCURRENCY"
+        env:
+          MAX_PROBE_NODES: "20000"
+          PROBE_CONCURRENCY: "120"
       - name: Commit updated files
         run: |
           git config user.name "github-actions[bot]"

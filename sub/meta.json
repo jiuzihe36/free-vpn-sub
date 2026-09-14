@@ -31,5 +31,17 @@
     "disney": 0,
     "youtube": 0,
     "tiktok": 0
+  },
+  "last_probe_at": "2026-09-14T12:50:58+00:00",
+  "probe": {
+    "node_count": 10000,
+    "unique_hosts": 7313,
+    "counts": {
+      "fast": 50,
+      "medium": 512,
+      "slow": 458,
+      "unreachable": 8980
+    },
+    "probe_seconds": 82.4
   }
 }
