@@ -38,6 +38,19 @@ Quantumult X 等客户端即可。
 把链接里的 `jiuzihe36/free-vpn-sub` 替换成自己的 GitHub 用户名和仓库名即可。
 如果你不改仓库名，也可以通过仓库设置里的 Pages 或 GitHub raw 域名获得同样的链接。
 
+## edgetunnel2 自建节点（推荐）
+
+免费聚合节点质量参差不齐，如果只是想要一个相对可用的节点，更推荐用
+[cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) 在 Cloudflare 免费额度上
+自己部署一个 VLESS/Trojan 节点。全程不用命令行，也不用服务器。
+
+- 傻瓜式部署教程：[docs/edgetunnel2-deploy.md](docs/edgetunnel2-deploy.md)
+- 本仓库内置部署包：[deploy/edgetunnel2-main.zip](deploy/edgetunnel2-main.zip)
+
+部署完成后，把 `https://你的项目.pages.dev/你的KEY` 填进 NekoBox / v2rayNG /
+Clash 即可。edgetunnel2 同样适合作为自属订阅源，后续可以把这条订阅加进
+`data/sources.json` 一起聚合。
+
 ## 本地生成
 
 ```bash
