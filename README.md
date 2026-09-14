@@ -87,6 +87,18 @@ python3 scripts/sanitize.py
 这个脚本会把无法生成有效 outbound 配置的坏节点丢出去，并移除免费源里基本
 不可用的 Shadowsocks 节点，只保留 NekoBox 能正确解析的 vmess/vless/trojan。
 
+并发真实测速筛选：
+
+```bash
+python3 scripts/speed_filter.py \
+  --input sub/keep.txt \
+  --core /path/to/sing-box \
+  --limit 100 \
+  --min-mbps 100
+```
+
+只有真实下载速度达到阈值的节点会写入 `sub/fast.txt`。
+
 ## 数据结构
 
 ```text
