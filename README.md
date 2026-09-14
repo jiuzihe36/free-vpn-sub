@@ -13,7 +13,7 @@ Quantumult X 等客户端即可。
 
 | 分类 | 链接 |
 | --- | --- |
-| 全部节点 | [sub/all.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/all.txt) |
+| 可用节点（已筛选） | [sub/keep.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/keep.txt) |
 | 解锁 ChatGPT | [sub/features/chatgpt.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/features/chatgpt.txt) |
 | 解锁 Netflix | [sub/features/netflix.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/features/netflix.txt) |
 | 解锁 Disney+ | [sub/features/disney.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/features/disney.txt) |
@@ -28,10 +28,7 @@ Quantumult X 等客户端即可。
 | V2Ray (vmess/vless) | [sub/by-protocol/vmess.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/vmess.txt) |
 | Trojan | [sub/by-protocol/trojan.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/trojan.txt) |
 | Shadowsocks | [sub/by-protocol/ss.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/ss.txt) |
-| 筛选后推荐订阅（延迟<400ms） | [sub/fast-only.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/fast-only.txt) |
-| 高速组（约100Mbps） | [sub/speed-100.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/speed-100.txt) |
-| 中速组（约30Mbps） | [sub/speed-30.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/speed-30.txt) |
-| 低速组（约10Mbps） | [sub/speed-10.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/speed-10.txt) |
+| 保留节点（延迟≤300ms，估测≥100Mbps） | [sub/keep.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/keep.txt) |
 | 低延迟节点（≤400ms） | [sub/quality/fast.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/fast.txt) |
 | 中延迟节点（401-900ms） | [sub/quality/medium.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/medium.txt) |
 | 高延迟节点（>900ms） | [sub/quality/slow.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/slow.txt) |
@@ -48,18 +45,16 @@ python3 scripts/probe.py --max-nodes 20000 --concurrency 120
 ```
 
 第一个脚本会读取 `data/sources.json` 里的公开订阅源，自动去重、分类，并写入
-`sub/`。第二个脚本会对聚合出的节点做 TCP 延迟探测，再生成按延迟分好的质量
-文件。
+`sub/`。第二个脚本会对聚合出的节点做 TCP 延迟探测，只保留延迟 ≤300ms 且估测
+速率 ≥100Mbps 的节点到 `sub/keep.txt`，不满足条件的节点不会进入推荐订阅。
 
 ## 数据结构
 
 ```text
 sub/
-├── all.txt                      # 全部节点
-├── fast-only.txt                # 筛选后的推荐订阅（延迟<400ms）
-├── speed-100.txt                # 约 100 Mbps 分组
-├── speed-30.txt                 # 约 30 Mbps 分组
-├── speed-10.txt                 # 约 10 Mbps 分组
+├── all.raw.txt                  # 未过滤的原始节点存档
+├── all.txt                      # 筛选后的可用节点
+├── keep.txt                     # 保留节点：延迟≤300ms，估测速率≥100Mbps
 ├── meta.json                    # 更新时间、数量统计
 ├── by-protocol/                 # 按协议分
 │   ├── vmess.txt
@@ -79,7 +74,7 @@ sub/
     ├── tiktok.txt
     └── streaming.txt
 └── quality/                     # 按延迟/可达性分
-    ├── fast.txt                 # ≤400ms
+    ├── fast.txt                 # ≤300ms
     ├── medium.txt               # 401-900ms
     ├── slow.txt                 # >900ms
     ├── unreachable.txt
