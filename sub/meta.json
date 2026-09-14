@@ -47,8 +47,8 @@
   },
   "sanitized_at": null,
   "sanitize": {
-    "input_count": 2668,
+    "input_count": 2398,
     "kept": 2398,
-    "dropped": 270
+    "dropped": 0
   }
 }

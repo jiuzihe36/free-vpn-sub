@@ -31,6 +31,14 @@ from typing import Dict, List, Optional
 
 ROOT = Path(__file__).resolve().parent.parent
 
+KNOWN_SS_METHODS = {
+    "none", "aes-128-cfb", "aes-192-cfb", "aes-256-cfb",
+    "aes-128-gcm", "aes-256-gcm", "aes-128-cfb1", "aes-192-cfb1", "aes-256-cfb1",
+    "aes-128-cfb8", "aes-192-cfb8", "aes-256-cfb8", "aes-128-ctr", "aes-192-ctr",
+    "aes-256-ctr", "rc4-md5", "chacha20-ietf", "xchacha20-ietf",
+    "chacha20-ietf-poly1305", "xchacha20-ietf-poly1305",
+}
+
 
 def log(message: str) -> None:
     print(message, flush=True)
@@ -59,11 +67,17 @@ def parse_ss(node: str) -> Dict[str, str]:
             method, password = userinfo.split(":", 1)
         else:
             method, password = "aes-128-gcm", userinfo
+        method = method.strip().lower()
+        if method not in KNOWN_SS_METHODS:
+            raise ValueError(f"Unknown Shadowsocks method {method}")
         host, port = hostport.rsplit(":", 1)
         return {"method": method, "password": password, "server": host, "server_port": int(port)}
     raw = base64.urlsafe_b64decode(body + "=" * (-len(body) % 4)).decode("utf-8", "ignore")
     userinfo, hostport = raw.rsplit("@", 1)
     method, password = userinfo.split(":", 1)
+    method = method.strip().lower()
+    if method not in KNOWN_SS_METHODS:
+        raise ValueError(f"Unknown Shadowsocks method {method}")
     host, port = hostport.rsplit(":", 1)
     return {"method": method, "password": password, "server": host, "server_port": int(port)}
 
