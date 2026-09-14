@@ -14,6 +14,7 @@ Quantumult X 等客户端即可。
 | 分类 | 链接 |
 | --- | --- |
 | 可用节点（已筛选） | [sub/keep.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/keep.txt) |
+| NekoBox 兼容节点 | [sub/nekobox.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/nekobox.txt) |
 | 解锁 ChatGPT | [sub/features/chatgpt.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/features/chatgpt.txt) |
 | 解锁 Netflix | [sub/features/netflix.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/features/netflix.txt) |
 | 解锁 Disney+ | [sub/features/disney.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/features/disney.txt) |

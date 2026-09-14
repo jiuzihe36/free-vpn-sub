@@ -26,6 +26,7 @@ from typing import Dict, List, Optional, Tuple
 ROOT = Path(__file__).resolve().parent.parent
 SUB_DIR = ROOT / "sub"
 QUALITY_DIR = SUB_DIR / "quality"
+NEKOBOX_PROTOCOLS = ("vmess://", "vless://", "trojan://", "ss://")
 
 
 def load_speedtest() -> object:
@@ -230,6 +231,12 @@ def main() -> int:
         keep_nodes,
         f"{header}\n# 只保留：延迟 <= 300ms，估测速率 >= 100Mbps"
         + ("（且真实测速 >= 100Mbps）" if args.real_speed_core else ""),
+    )
+    nekobox_nodes = [node for node in keep_nodes if node.lower().startswith(NEKOBOX_PROTOCOLS)]
+    counts["nekobox"] = write_lines(
+        SUB_DIR / "nekobox.txt",
+        nekobox_nodes,
+        f"{header}\n# NekoBox 常见兼容节点：vmess/vless/trojan/ss",
     )
 
     write_lines(
