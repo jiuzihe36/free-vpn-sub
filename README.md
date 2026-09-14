@@ -66,6 +66,17 @@ python3 scripts/speedtest.py \
 前提：需要先安装 [sing-box](https://sing-box.sagernet.org/) 或 xray，也可以用
 `--core` 指定二进制路径。
 
+如果想自动把真实测速也写进筛选结果，可以直接跑：
+
+```bash
+python3 scripts/probe.py \
+  --real-speed-core /path/to/sing-box \
+  --real-speed-limit 50
+```
+
+这样会先按延迟 ≤300ms 过滤，再对候选节点跑真实下载测速，只有实测 ≥100Mbps
+的节点才会写入 `sub/keep.txt`。
+
 ## 数据结构
 
 ```text

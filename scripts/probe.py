@@ -13,6 +13,7 @@ import argparse
 import asyncio
 import base64
 import csv
+import importlib.util
 import json
 import socket
 import sys
@@ -25,6 +26,14 @@ from typing import Dict, List, Optional, Tuple
 ROOT = Path(__file__).resolve().parent.parent
 SUB_DIR = ROOT / "sub"
 QUALITY_DIR = SUB_DIR / "quality"
+
+
+def load_speedtest() -> object:
+    module_path = ROOT / "scripts" / "speedtest.py"
+    spec = importlib.util.spec_from_file_location("speedtest", module_path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)  # type: ignore[union-attr]
+    return module
 
 
 def log(message: str) -> None:
@@ -131,6 +140,9 @@ def main() -> int:
     parser.add_argument("--max-nodes", type=int, default=20000, help="Only probe the first N nodes.")
     parser.add_argument("--timeout", type=float, default=2.5, help="TCP connect timeout in seconds.")
     parser.add_argument("--concurrency", type=int, default=120, help="Concurrent connection checks.")
+    parser.add_argument("--real-speed-core", type=str, help="Path to sing-box/xray binary for real speed tests.")
+    parser.add_argument("--real-speed-limit", type=int, default=50, help="Max nodes for real speed tests.")
+    parser.add_argument("--real-speed-url", default="https://proof.ovh.net/files/20Mb.dat")
     args = parser.parse_args()
 
     all_file = SUB_DIR / "all.raw.txt"
@@ -189,15 +201,42 @@ def main() -> int:
         "slow": write_lines(QUALITY_DIR / "slow.txt", slow_nodes, f"{header}\n# > 900ms, estimated ~10 Mbps"),
         "unreachable": write_lines(QUALITY_DIR / "unreachable.txt", unreachable_nodes + unparsed, f"{header}\n# unreachable or unparsable"),
     }
+    speed_passed: List[str] = []
+    if args.real_speed_core:
+        speedtest = load_speedtest()
+        candidates = fast_nodes[: args.real_speed_limit]
+        results = []
+        port = 10801
+        for node in candidates:
+            log(f"  speed-testing {node[:80]}")
+            mbps = speedtest.run_node_speed(
+                node,
+                args.real_speed_core,
+                port,
+                args.real_speed_url,
+                20,
+            )
+            results.append({"node": node, "mbps": round(mbps, 2) if mbps is not None else None})
+            port += 1
+            if mbps is not None and mbps >= 100:
+                speed_passed.append(node)
+        (SUB_DIR / "speedtest.json").write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
+        counts["real_speed_kept"] = len(speed_passed)
+        counts["real_speed_failed"] = len(candidates) - len(speed_passed)
+
+    keep_nodes = speed_passed if args.real_speed_core else fast_nodes
     counts["keep"] = write_lines(
         SUB_DIR / "keep.txt",
-        fast_nodes,
-        f"{header}\n# 只保留：延迟 <= 300ms，估测速率 >= 100Mbps",
+        keep_nodes,
+        f"{header}\n# 只保留：延迟 <= 300ms，估测速率 >= 100Mbps"
+        + ("（且真实测速 >= 100Mbps）" if args.real_speed_core else ""),
     )
+
     write_lines(
         SUB_DIR / "all.txt",
-        fast_nodes,
-        f"{header}\n# 已过滤：只保留延迟 <= 300ms，估测速率 >= 100Mbps 的节点",
+        keep_nodes,
+        f"{header}\n# 已过滤：只保留延迟 <= 300ms，估测速率 >= 100Mbps 的节点"
+        + ("（且真实测速 >= 100Mbps）" if args.real_speed_core else ""),
     )
 
     with (QUALITY_DIR / "probe.csv").open("w", encoding="utf-8", newline="") as f:
