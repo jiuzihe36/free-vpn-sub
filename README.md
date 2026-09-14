@@ -29,6 +29,9 @@ Quantumult X 等客户端即可。
 | Trojan | [sub/by-protocol/trojan.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/trojan.txt) |
 | Shadowsocks | [sub/by-protocol/ss.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/ss.txt) |
 | 筛选后推荐订阅（延迟<400ms） | [sub/fast-only.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/fast-only.txt) |
+| 高速组（约100Mbps） | [sub/speed-100.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/speed-100.txt) |
+| 中速组（约30Mbps） | [sub/speed-30.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/speed-30.txt) |
+| 低速组（约10Mbps） | [sub/speed-10.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/speed-10.txt) |
 | 低延迟节点（≤400ms） | [sub/quality/fast.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/fast.txt) |
 | 中延迟节点（401-900ms） | [sub/quality/medium.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/medium.txt) |
 | 高延迟节点（>900ms） | [sub/quality/slow.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/slow.txt) |
@@ -54,6 +57,9 @@ python3 scripts/probe.py --max-nodes 20000 --concurrency 120
 sub/
 ├── all.txt                      # 全部节点
 ├── fast-only.txt                # 筛选后的推荐订阅（延迟<400ms）
+├── speed-100.txt                # 约 100 Mbps 分组
+├── speed-30.txt                 # 约 30 Mbps 分组
+├── speed-10.txt                 # 约 10 Mbps 分组
 ├── meta.json                    # 更新时间、数量统计
 ├── by-protocol/                 # 按协议分
 │   ├── vmess.txt
