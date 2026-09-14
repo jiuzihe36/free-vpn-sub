@@ -44,5 +44,11 @@
       "keep": 2668
     },
     "probe_seconds": 106.0
+  },
+  "sanitized_at": null,
+  "sanitize": {
+    "input_count": 2668,
+    "kept": 2398,
+    "dropped": 270
   }
 }

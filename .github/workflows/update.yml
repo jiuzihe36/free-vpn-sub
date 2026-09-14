@@ -20,6 +20,7 @@ jobs:
         run: |
           python scripts/aggregate.py
           python scripts/probe.py --max-nodes "$MAX_PROBE_NODES" --concurrency "$PROBE_CONCURRENCY"
+          python scripts/sanitize.py
         env:
           MAX_PROBE_NODES: "20000"
           PROBE_CONCURRENCY: "120"

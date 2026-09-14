@@ -78,6 +78,15 @@ python3 scripts/probe.py \
 这样会先按延迟 ≤300ms 过滤，再对候选节点跑真实下载测速，只有实测 ≥100Mbps
 的节点才会写入 `sub/keep.txt`。
 
+如果客户端出现类似 `unknown method` 的解析错误，可以运行：
+
+```bash
+python3 scripts/sanitize.py
+```
+
+这个脚本会把无法生成有效 outbound 配置的坏节点丢出去，只保留 NekoBox 能正确
+解析的节点。
+
 ## 数据结构
 
 ```text
