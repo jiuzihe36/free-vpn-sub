@@ -48,6 +48,24 @@ python3 scripts/probe.py --max-nodes 20000 --concurrency 120
 `sub/`。第二个脚本会对聚合出的节点做 TCP 延迟探测，只保留延迟 ≤300ms 且估测
 速率 ≥100Mbps 的节点到 `sub/keep.txt`，不满足条件的节点不会进入推荐订阅。
 
+## 真实带宽测速
+
+延迟探测只是筛选门槛，真实带宽需要用代理内核跑真实下载才能测。本仓库提供了
+`scripts/speedtest.py`：
+
+```bash
+python3 scripts/speedtest.py \
+  --input sub/keep.txt \
+  --core /path/to/sing-box \
+  --limit 10
+```
+
+脚本会为每个节点生成临时 sing-box 配置，在本机启动 SOCKS5 代理，然后用 curl
+下载真实文件计算 Mbps，结果写入 `sub/speedtest.json`。
+
+前提：需要先安装 [sing-box](https://sing-box.sagernet.org/) 或 xray，也可以用
+`--core` 指定二进制路径。
+
 ## 数据结构
 
 ```text
