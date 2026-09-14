@@ -143,7 +143,7 @@ def main() -> int:
     parser.add_argument("--concurrency", type=int, default=120, help="Concurrent connection checks.")
     parser.add_argument("--real-speed-core", type=str, help="Path to sing-box/xray binary for real speed tests.")
     parser.add_argument("--real-speed-limit", type=int, default=50, help="Max nodes for real speed tests.")
-    parser.add_argument("--real-speed-url", default="https://proof.ovh.net/files/20Mb.dat")
+    parser.add_argument("--real-speed-url", default="https://speed.cloudflare.com/__down?bytes=10000000")
     args = parser.parse_args()
 
     all_file = SUB_DIR / "all.raw.txt"

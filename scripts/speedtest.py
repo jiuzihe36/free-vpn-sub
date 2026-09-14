@@ -258,7 +258,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=str, default=str(ROOT / "sub" / "keep.txt"))
     parser.add_argument("--core", type=str, help="Path to sing-box/xray binary")
-    parser.add_argument("--url", default="https://proof.ovh.net/files/20Mb.dat")
+    parser.add_argument("--url", default="https://speed.cloudflare.com/__down?bytes=10000000")
     parser.add_argument("--limit", type=int, default=5)
     parser.add_argument("--port", type=int, default=10801)
     parser.add_argument("--max-time", type=int, default=20)
