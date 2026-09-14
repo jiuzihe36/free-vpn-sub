@@ -26,7 +26,7 @@ from typing import Dict, List, Optional, Tuple
 ROOT = Path(__file__).resolve().parent.parent
 SUB_DIR = ROOT / "sub"
 QUALITY_DIR = SUB_DIR / "quality"
-NEKOBOX_PROTOCOLS = ("vmess://", "vless://", "trojan://", "ss://")
+NEKOBOX_PROTOCOLS = ("vmess://", "vless://", "trojan://")
 
 
 def load_speedtest() -> object:
@@ -236,7 +236,7 @@ def main() -> int:
     counts["nekobox"] = write_lines(
         SUB_DIR / "nekobox.txt",
         nekobox_nodes,
-        f"{header}\n# NekoBox 常见兼容节点：vmess/vless/trojan/ss",
+        f"{header}\n# NekoBox 兼容节点：vmess/vless/trojan",
     )
 
     write_lines(

@@ -44,6 +44,9 @@ def main() -> int:
     valid: List[str] = []
     dropped: List[str] = []
     for node in nodes:
+        if node.lower().startswith("ss://"):
+            dropped.append(node)
+            continue
         try:
             speedtest.build_outbound(node)
             valid.append(node)
@@ -55,7 +58,7 @@ def main() -> int:
     write_sorted(SUB_DIR / "keep.txt", valid, f"{header}\n# 只保留可正确解析的节点")
 
     meta = json.loads((SUB_DIR / "meta.json").read_text(encoding="utf-8"))
-    meta["sanitized_at"] = meta.get("sanitized_at")
+    meta["sanitized_at"] = meta.get("sanitized_at", "")
     meta["sanitize"] = {"input_count": len(nodes), "kept": len(valid), "dropped": len(dropped)}
     (SUB_DIR / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"kept {len(valid)}, dropped {len(dropped)}")

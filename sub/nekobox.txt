@@ -2,8 +2,6 @@
 # NekoBox 常见兼容节点：vmess/vless/trojan/ss
 hysteria2://20b7100438be713dc89876906214c5b1@8.209.217.129:443?insecure=1&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a&sni=8.209.217.129#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC
 hysteria2://8592a518062d3aaeacd3b202f30118f9@8.209.248.218:443?insecure=1&obfs=salamander&obfs-password=salamander&sni=8.209.248.218#%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC%20%7C%20JPN
-ss://YWVzLTI1Ni1jZmI6MTIzNCFAIyQ=@49.254.204.134:1774# By EbraSha 🛸
-ss://YWVzLTI1Ni1jZmI6MTIzNCFAIyQ=@49.254.204.134:1774#%F0%9F%87%B0%F0%9F%87%B7KR-49.254.204.134-0225
 trojan://!d8jYnLU)@172.66.46.215:8443/?type=tcp&security=tls&sni=K2ZFG80-8-0jEH9h-5wTKt43R92VJi0P.pageS.dEV# By EbraSha 🌑
 trojan://$_qP4V4U26sb%7B04A@172.66.44.115:2083/?type=tcp&security=tls&sni=do-itfORYOU.PAGEs.deV# By EbraSha 🛡️
 trojan://%3FM%7C%24pIEDnf8N@www.speedtest.net:443?path=%2FtrfTOD5pZ7bIEs3KNa%2FYnBiLnlvdXNlZi5pc2VnYXJvLmNvbQ%3D%3D&amp;security=tls&amp;alpn=http%2F1.1&amp;host=gkh7imomi--3t3xcstzt8pp4dlzueskn.pages.dev&amp;fp=randomized&amp;type=ws&amp;sni=gkH7iMomi--3t3XCStzt8pP4dLZUeskN.PagEs.Dev# By EbraSha 🖥️

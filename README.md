@@ -84,8 +84,8 @@ python3 scripts/probe.py \
 python3 scripts/sanitize.py
 ```
 
-这个脚本会把无法生成有效 outbound 配置的坏节点丢出去，只保留 NekoBox 能正确
-解析的节点。
+这个脚本会把无法生成有效 outbound 配置的坏节点丢出去，并移除免费源里基本
+不可用的 Shadowsocks 节点，只保留 NekoBox 能正确解析的 vmess/vless/trojan。
 
 ## 数据结构
 
