@@ -32,16 +32,17 @@
     "youtube": 0,
     "tiktok": 0
   },
-  "last_probe_at": "2026-09-14T12:50:58+00:00",
+  "last_probe_at": "2026-09-14T12:55:12+00:00",
   "probe": {
-    "node_count": 10000,
-    "unique_hosts": 7313,
+    "node_count": 20000,
+    "unique_hosts": 14917,
     "counts": {
-      "fast": 50,
-      "medium": 512,
-      "slow": 458,
-      "unreachable": 8980
+      "fast": 3551,
+      "medium": 555,
+      "slow": 896,
+      "unreachable": 14998,
+      "fast_only": 3551
     },
-    "probe_seconds": 82.4
+    "probe_seconds": 111.8
   }
 }

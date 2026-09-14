@@ -28,9 +28,10 @@ Quantumult X 等客户端即可。
 | V2Ray (vmess/vless) | [sub/by-protocol/vmess.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/vmess.txt) |
 | Trojan | [sub/by-protocol/trojan.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/trojan.txt) |
 | Shadowsocks | [sub/by-protocol/ss.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/by-protocol/ss.txt) |
-| 低延迟/快速节点（≤150ms） | [sub/quality/fast.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/fast.txt) |
-| 中延迟节点（151-300ms） | [sub/quality/medium.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/medium.txt) |
-| 高延迟节点（>300ms） | [sub/quality/slow.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/slow.txt) |
+| 筛选后推荐订阅（延迟<400ms） | [sub/fast-only.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/fast-only.txt) |
+| 低延迟节点（≤400ms） | [sub/quality/fast.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/fast.txt) |
+| 中延迟节点（401-900ms） | [sub/quality/medium.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/medium.txt) |
+| 高延迟节点（>900ms） | [sub/quality/slow.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/slow.txt) |
 | 不可达节点 | [sub/quality/unreachable.txt](https://raw.githubusercontent.com/jiuzihe36/free-vpn-sub/main/sub/quality/unreachable.txt) |
 
 把链接里的 `jiuzihe36/free-vpn-sub` 替换成自己的 GitHub 用户名和仓库名即可。
@@ -52,6 +53,7 @@ python3 scripts/probe.py --max-nodes 20000 --concurrency 120
 ```text
 sub/
 ├── all.txt                      # 全部节点
+├── fast-only.txt                # 筛选后的推荐订阅（延迟<400ms）
 ├── meta.json                    # 更新时间、数量统计
 ├── by-protocol/                 # 按协议分
 │   ├── vmess.txt
@@ -71,9 +73,9 @@ sub/
     ├── tiktok.txt
     └── streaming.txt
 └── quality/                     # 按延迟/可达性分
-    ├── fast.txt                 # ≤150ms
-    ├── medium.txt               # 151-300ms
-    ├── slow.txt                 # >300ms
+    ├── fast.txt                 # ≤400ms
+    ├── medium.txt               # 401-900ms
+    ├── slow.txt                 # >900ms
     ├── unreachable.txt
     └── probe.csv                # 探测明细
 ```
