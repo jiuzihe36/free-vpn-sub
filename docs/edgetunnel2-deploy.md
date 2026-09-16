@@ -130,6 +130,10 @@ edgetunnel2 需要用 KV 记录后台状态和日志。
 https://edgetunnel.pages.dev
 ```
 
+注意：实际域名可能是 `https://edgetunnel.pages.dev` 的变体，例如项目名重复时会变成
+`https://edgetunnel-35x.pages.dev`。**以脚本输出或 Cloudflare 控制台里的真实域名
+为准**，不要只看项目名拼地址。
+
 如果你设置了 `KEY=mykey`，那订阅地址就是：
 
 ```text

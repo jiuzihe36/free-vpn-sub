@@ -229,6 +229,14 @@ def project_exists(account_id, project, token):
         raise
 
 
+def get_project(account_id, project, token):
+    return get_result(
+        "GET",
+        f"/accounts/{account_id}/pages/projects/{project}",
+        token,
+    )
+
+
 def create_project(account_id, project, token):
     return get_result(
         "POST",
@@ -242,6 +250,14 @@ def create_project(account_id, project, token):
 
 
 def get_or_create_kv(account_id, title, token):
+    existing = get_result(
+        "GET",
+        f"/accounts/{account_id}/storage/kv/namespaces",
+        token,
+    )
+    for namespace in existing or []:
+        if namespace.get("title") == title:
+            return namespace["id"]
     result = get_result(
         "POST",
         f"/accounts/{account_id}/storage/kv/namespaces",
@@ -418,6 +434,9 @@ def main():
         print("    已创建项目")
     else:
         print("    项目已存在")
+    project_meta = get_project(account_id, project, token)
+    subdomain = project_meta.get("subdomain") or f"{project}.pages.dev"
+    print(f"    域名: {subdomain}")
 
     print("==> 创建/查找 KV 命名空间")
     kv_title = f"{project}_kv"
@@ -472,8 +491,8 @@ def main():
 
     print()
     print("完成！下面是你的订阅地址：")
-    print(f"订阅: https://{project}.pages.dev/{key}")
-    print(f"后台: https://{project}.pages.dev/admin")
+    print(f"订阅: https://{subdomain}/{key}")
+    print(f"后台: https://{subdomain}/admin")
     print(f"ADMIN 密码: {admin}")
 
 

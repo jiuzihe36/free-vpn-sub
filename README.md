@@ -58,9 +58,10 @@ export EDGETUNNEL_KEY=mykey
 python3 scripts/deploy_edgetunnel2.py
 ```
 
-部署完成后，把输出里的 `https://你的项目.pages.dev/你的KEY` 填进 NekoBox /
-v2rayNG / Clash 即可。edgetunnel2 同样适合作为自属订阅源，后续可以把这条订阅
-加进 `data/sources.json` 一起聚合。
+部署完成后，把脚本输出里的真实订阅地址（形如 `https://你的项目或变体.pages.dev/你的KEY`）
+填进 NekoBox / v2rayNG / Clash 即可。注意实际域名以脚本输出为准，项目名重复时
+Cloudflare 会分配变体域名，例如 `edgetunnel-35x.pages.dev`。edgetunnel2 同样适合
+作为自属订阅源，后续可以把这条订阅加进 `data/sources.json` 一起聚合。
 
 ## 本地生成
 
