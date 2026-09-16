@@ -24,6 +24,45 @@ https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip
 
 下载完不要解压，后面直接上传 zip。
 
+## 一键 API 自动部署（推荐给小白）
+
+仓库里已经放好了一键部署脚本，只要有两个东西就能自动创建 Cloudflare Pages 项目、
+创建 KV、设置 `ADMIN` / `KEY` / `UUID` / `PROXYIP`、上传 `main.zip`、返回订阅地址：
+
+```bash
+export CLOUDFLARE_API_TOKEN=你的CloudflareAPI令牌
+export CLOUDFLARE_ACCOUNT_ID=你的账号ID
+export EDGETUNNEL_ADMIN=你自己想的后台密码
+export EDGETUNNEL_KEY=mykey
+python3 scripts/deploy_edgetunnel2.py
+```
+
+不设置 `EDGETUNNEL_ADMIN` 时会自动生成一个随机密码并打印出来。
+
+### 怎么拿到 API 令牌
+
+1. 打开 https://dash.cloudflare.com/profile/api-tokens
+2. 点 **创建令牌**
+3. 选 **自定义令牌** → **开始**
+4. 权限选择：
+   - 账号 → Cloudflare Pages → 编辑
+   - 账号 → Workers KV Storage → 编辑
+5. 账号资源选你的主账号
+6. 创建后复制令牌
+
+账号 ID 在 Cloudflare 仪表盘右侧 **API** 一栏能看到，通常是一串 32 位十六进制。
+
+### GitHub Actions 自动部署（可选）
+
+仓库里已经加了 `.github/workflows/deploy-edgetunnel2.yml`。往 GitHub 仓库的
+`Settings -> Secrets and variables -> Actions` 里添加：
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+然后去 Actions 里手动运行 **Deploy edgetunnel2**，输入后台密码和 `KEY` 即可。
+这样以后你只要重新运行这个 Action，就能自动重新部署。
+
 ## 第一步：创建 Cloudflare Pages 项目
 
 1. 打开 Cloudflare 控制台

@@ -1,0 +1,35 @@
+name: Deploy edgetunnel2
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: Cloudflare Pages project name
+        required: false
+        default: edgetunnel
+      admin:
+        description: ADMIN backend password
+        required: true
+      key:
+        description: Subscription KEY path
+        required: true
+        default: mykey
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Python blake3
+        run: python -m pip install blake3
+      - name: Deploy edgetunnel2 to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          EDGETUNNEL_PROJECT: ${{ inputs.project }}
+          EDGETUNNEL_ADMIN: ${{ inputs.admin }}
+          EDGETUNNEL_KEY: ${{ inputs.key }}
+        run: python scripts/deploy_edgetunnel2.py

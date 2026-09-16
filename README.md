@@ -46,10 +46,21 @@ Quantumult X 等客户端即可。
 
 - 傻瓜式部署教程：[docs/edgetunnel2-deploy.md](docs/edgetunnel2-deploy.md)
 - 本仓库内置部署包：[deploy/edgetunnel2-main.zip](deploy/edgetunnel2-main.zip)
+- 一键 API 部署脚本：[scripts/deploy_edgetunnel2.py](scripts/deploy_edgetunnel2.py)
 
-部署完成后，把 `https://你的项目.pages.dev/你的KEY` 填进 NekoBox / v2rayNG /
-Clash 即可。edgetunnel2 同样适合作为自属订阅源，后续可以把这条订阅加进
-`data/sources.json` 一起聚合。
+一键部署命令：
+
+```bash
+export CLOUDFLARE_API_TOKEN=...
+export CLOUDFLARE_ACCOUNT_ID=...
+export EDGETUNNEL_ADMIN=你的后台密码
+export EDGETUNNEL_KEY=mykey
+python3 scripts/deploy_edgetunnel2.py
+```
+
+部署完成后，把输出里的 `https://你的项目.pages.dev/你的KEY` 填进 NekoBox /
+v2rayNG / Clash 即可。edgetunnel2 同样适合作为自属订阅源，后续可以把这条订阅
+加进 `data/sources.json` 一起聚合。
 
 ## 本地生成
 
