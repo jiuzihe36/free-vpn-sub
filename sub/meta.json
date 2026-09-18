@@ -1,29 +1,31 @@
 {
-  "updated_at": "2026-09-17T06:54:08+00:00",
+  "updated_at": "2026-09-18T06:51:10+00:00",
   "source_count": 10,
-  "broken_sources": [],
-  "node_count": 41113,
+  "broken_sources": [
+    "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt"
+  ],
+  "node_count": 40870,
   "counts": {
-    "all": 41113,
-    "vmess": 5542,
-    "vless": 21065,
-    "trojan": 5495,
-    "ss": 8724,
-    "ssr": 71,
-    "hysteria2": 216,
-    "AU": 4,
+    "all": 40870,
+    "vmess": 5614,
+    "vless": 20829,
+    "trojan": 5486,
+    "ss": 8675,
+    "ssr": 73,
+    "hysteria2": 193,
+    "AU": 2,
     "CA": 7,
-    "DE": 60,
-    "FR": 50,
-    "GB": 7,
-    "HK": 25,
+    "DE": 56,
+    "FR": 46,
+    "GB": 3,
+    "HK": 21,
     "IN": 6,
-    "JP": 134,
-    "KR": 3,
-    "RU": 4,
-    "SG": 7,
+    "JP": 129,
+    "KR": 1,
+    "RU": 7,
+    "SG": 9,
     "TW": 4,
-    "US": 1452,
+    "US": 1456,
     "chatgpt": 1,
     "streaming": 1,
     "netflix": 0,
@@ -31,24 +33,24 @@
     "youtube": 0,
     "tiktok": 0
   },
-  "last_probe_at": "2026-09-17T06:56:48+00:00",
+  "last_probe_at": "2026-09-18T06:54:09+00:00",
   "probe": {
     "node_count": 20000,
-    "unique_hosts": 14882,
+    "unique_hosts": 14969,
     "counts": {
-      "fast": 5218,
-      "medium": 435,
-      "slow": 1108,
-      "unreachable": 13239,
-      "keep": 5218,
-      "nekobox": 4088
+      "fast": 5112,
+      "medium": 420,
+      "slow": 897,
+      "unreachable": 13571,
+      "keep": 5112,
+      "nekobox": 4029
     },
-    "probe_seconds": 159.6
+    "probe_seconds": 177.5
   },
   "sanitized_at": "",
   "sanitize": {
-    "input_count": 5218,
-    "kept": 4117,
-    "dropped": 1101
+    "input_count": 5112,
+    "kept": 4056,
+    "dropped": 1056
   }
 }
