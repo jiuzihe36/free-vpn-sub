@@ -2,4 +2,4 @@
 # Country: RU
 hysteria2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@gta.internet-card.sbs:443?insecure=1&sni=gta.internet-card.sbs#%E4%BF%84%E7%BD%97%E6%96%AF
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNlpDSGVhYlVTZktqZlFFdko0SERW@185.242.86.156:54170#github.com/freefq%20-%20%E4%BF%84%E7%BD%97%E6%96%AF%20%201
-vless://af2a0c18-b08c-471f-baa3-259ac2ce3a85@tr3.wba-pn.ru:443?encryption=none&security=tls&type=ws#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF
+vless://c5694dc5-39fd-4a92-8430-3837baa522a3@91.240.87.166:443?security=reality&encryption=none&pbk=2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4&host=/?&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yandex.ru&sid=7bb730e3e6616d31#%E4%BF%84%E7%BD%97%E6%96%AF+V2CROSS.COM
