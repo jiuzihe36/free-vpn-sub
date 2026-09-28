@@ -2,3 +2,4 @@
 # Country: TW
 ss://YWVzLTEyOC1nY206MTdiNzBmNzItZmM0Zi00MWE3LWEzMmYtZTBiYmFkN2QxNDAw@gd.bjnet2.com:36603#%F0%9F%87%A8%F0%9F%87%B3%20%E5%8F%B0%E6%B9%BE%7C%40ripaojiedian
 ss://YWVzLTEyOC1nY206MTdiNzBmNzItZmM0Zi00MWE3LWEzMmYtZTBiYmFkN2QxNDAw@gd.bjnet2.com:36603?plugin=obfs-local%3Bobfs%3Dhttp%3Bobfs-host%3D3c183f1f4eae079d708e817ae656417a.baidu.com#%E5%8F%B0%E6%B9%BE%7C%40ripaojiedian
+vless://fdc48be3-a615-41ac-8bd1-ed844c931048@141.11.87.48:8443?security=tls&type=ws&path=%2F&host=edgetunnel-4uw.pages.dev&sni=edgetunnel-4uw.pages.dev&fp=chrome#%F0%9F%87%A8%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E5%8F%B0%E6%B9%BE%2003
