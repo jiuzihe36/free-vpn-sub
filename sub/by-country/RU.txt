@@ -2,7 +2,6 @@
 # Country: RU
 hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:22443?insecure=1&sni=91.240.86.70#%F0%9F%87%B7%F0%9F%87%BA%20%E4%BF%84%E7%BD%97%E6%96%AF%20%7C%20RUS
 hysteria2://3f63c86c-ac4a-4900-85cf-4fedf93c2ca5@91.240.86.70:22443?sni=itsallproxy.quattro-tech.ru#%F0%9F%87%B7%F0%9F%87%BA%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E4%BF%84%E7%BD%97%E6%96%AF%2004
+hysteria2://5d0a6445-a30d-4522-bb1f-94f1d3ad63be@els.mangshe.xyz:2060?insecure=1&sni=els.mangshe.xyz#%F0%9F%87%B7%F0%9F%87%BA%20%E4%BF%84%E7%BD%97%E6%96%AF%20%7C%20RUS%20%232
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNlpDSGVhYlVTZktqZlFFdko0SERW@185.242.86.156:54170#github.com/freefq%20-%20%E4%BF%84%E7%BD%97%E6%96%AF%20%201
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@5.129.249.45:9892?&security=reality&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&sid=aa&fp=firefox&sni=dl.google.com&type=grpc&serviceName=&mode=gun#%F0%9F%87%B7%F0%9F%87%BA%20%E4%BF%84%E7%BD%97%E6%96%AF%20%7C%20RUS
-vless://6db7ea14-ed33-4591-a9b1-f1e91b1c0ff5@ru-test.omuservice.tech:8443?&security=reality&flow=xtls-rprx-vision&pbk=yyH7Fyfh1ULPH4L5mFVtqPf_rB1IY6jwDgOuIRY7-wA&sid=9409a3561ba49f30&fp=chrome&sni=ozone.nl&type=tcp&headerType=none&host=ozone.nl&path=%2F#%F0%9F%87%B7%F0%9F%87%BA%20%E4%BF%84%E7%BD%97%E6%96%AF%20%7C%20RUS
-vless://6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2@91.193.58.218:2096?security=tls&type=ws&path=/free-server.techsonic.dev&host=free-server.techsonic.dev&packetEncoding=xudp&sni=free-server.techsonic.dev&fp=chrome#%E4%BF%84%E7%BD%97%E6%96%AF+V2CROSS.COM
+vless://13ef8e97-815a-000d-8688-0154d85d26bf@195.133.5.184:443?sni=ru26.aimodelhub.top&fp=qq&security=tls#%F0%9F%87%B7%F0%9F%87%BA%20%E4%BF%84%E7%BD%97%E6%96%AF%20%7C%20RUS%20%231
