@@ -1,32 +1,31 @@
 {
-  "updated_at": "2026-10-11T07:59:57+00:00",
+  "updated_at": "2026-10-12T08:15:53+00:00",
   "source_count": 10,
   "broken_sources": [
     "https://raw.githubusercontent.com/vless-reality/vless-reality.github.io/main/.github/links/v2.txt"
   ],
-  "node_count": 22657,
+  "node_count": 22968,
   "counts": {
-    "all": 22657,
-    "vmess": 6701,
-    "vless": 8456,
-    "trojan": 2647,
-    "ss": 4456,
-    "ssr": 80,
-    "hysteria2": 316,
+    "all": 22968,
+    "vmess": 6766,
+    "vless": 8573,
+    "trojan": 2648,
+    "ss": 4544,
+    "ssr": 82,
+    "hysteria2": 354,
     "tuic": 1,
-    "AU": 2,
     "CA": 7,
-    "DE": 42,
-    "FR": 4,
-    "GB": 3,
-    "HK": 23,
-    "IN": 5,
-    "JP": 141,
-    "KR": 4,
-    "RU": 7,
-    "SG": 7,
-    "TW": 2,
-    "US": 1395,
+    "DE": 52,
+    "FR": 8,
+    "GB": 9,
+    "HK": 35,
+    "IN": 6,
+    "JP": 181,
+    "KR": 7,
+    "RU": 6,
+    "SG": 16,
+    "TW": 5,
+    "US": 1421,
     "chatgpt": 0,
     "netflix": 0,
     "disney": 0,
@@ -34,24 +33,24 @@
     "tiktok": 0,
     "streaming": 0
   },
-  "last_probe_at": "2026-10-11T08:02:29+00:00",
+  "last_probe_at": "2026-10-12T08:18:03+00:00",
   "probe": {
     "node_count": 20000,
-    "unique_hosts": 13659,
+    "unique_hosts": 13582,
     "counts": {
-      "fast": 6698,
-      "medium": 472,
-      "slow": 1356,
-      "unreachable": 11474,
-      "keep": 6698,
-      "nekobox": 5982
+      "fast": 7584,
+      "medium": 1261,
+      "slow": 1336,
+      "unreachable": 9819,
+      "keep": 7584,
+      "nekobox": 6722
     },
-    "probe_seconds": 151.8
+    "probe_seconds": 129.3
   },
   "sanitized_at": "",
   "sanitize": {
-    "input_count": 6698,
-    "kept": 6009,
-    "dropped": 689
+    "input_count": 7584,
+    "kept": 6753,
+    "dropped": 831
   }
 }
