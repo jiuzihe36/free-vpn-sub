@@ -1,32 +1,31 @@
 {
-  "updated_at": "2026-11-09T08:50:58+00:00",
+  "updated_at": "2026-11-10T08:56:32+00:00",
   "source_count": 10,
   "broken_sources": [
     "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/all_extracted_configs.txt",
     "https://raw.githubusercontent.com/vless-reality/vless-reality.github.io/main/.github/links/v2.txt"
   ],
-  "node_count": 5154,
+  "node_count": 5197,
   "counts": {
-    "all": 5154,
-    "vmess": 1879,
-    "vless": 311,
-    "trojan": 812,
-    "ss": 2040,
-    "ssr": 60,
-    "hysteria2": 52,
-    "AU": 2,
-    "CA": 7,
-    "DE": 37,
-    "FR": 3,
-    "GB": 1,
-    "HK": 15,
-    "IN": 5,
-    "JP": 157,
-    "KR": 6,
-    "RU": 9,
-    "SG": 8,
+    "all": 5197,
+    "vmess": 1897,
+    "vless": 344,
+    "trojan": 797,
+    "ss": 2053,
+    "ssr": 61,
+    "hysteria2": 45,
+    "CA": 9,
+    "DE": 63,
+    "FR": 5,
+    "GB": 5,
+    "HK": 14,
+    "IN": 6,
+    "JP": 147,
+    "KR": 4,
+    "RU": 11,
+    "SG": 12,
     "TW": 3,
-    "US": 1493,
+    "US": 1487,
     "chatgpt": 0,
     "netflix": 0,
     "disney": 0,
@@ -34,24 +33,24 @@
     "tiktok": 0,
     "streaming": 0
   },
-  "last_probe_at": "2026-11-09T08:51:50+00:00",
+  "last_probe_at": "2026-11-10T08:57:25+00:00",
   "probe": {
-    "node_count": 5154,
-    "unique_hosts": 4590,
+    "node_count": 5197,
+    "unique_hosts": 4612,
     "counts": {
-      "fast": 1829,
-      "medium": 236,
-      "slow": 15,
-      "unreachable": 3074,
-      "keep": 1829,
-      "nekobox": 1494
+      "fast": 1833,
+      "medium": 263,
+      "slow": 29,
+      "unreachable": 3072,
+      "keep": 1833,
+      "nekobox": 1490
     },
-    "probe_seconds": 52.0
+    "probe_seconds": 53.2
   },
   "sanitized_at": "",
   "sanitize": {
-    "input_count": 1829,
-    "kept": 1500,
-    "dropped": 329
+    "input_count": 1833,
+    "kept": 1497,
+    "dropped": 336
   }
 }
