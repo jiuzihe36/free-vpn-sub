@@ -1,31 +1,31 @@
 {
-  "updated_at": "2026-11-18T09:27:43+00:00",
+  "updated_at": "2026-11-19T09:38:55+00:00",
   "source_count": 10,
   "broken_sources": [
     "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/all_extracted_configs.txt",
     "https://raw.githubusercontent.com/vless-reality/vless-reality.github.io/main/.github/links/v2.txt"
   ],
-  "node_count": 5059,
+  "node_count": 5073,
   "counts": {
-    "all": 5059,
-    "vmess": 1802,
-    "vless": 348,
-    "trojan": 778,
-    "ss": 2029,
-    "ssr": 61,
-    "hysteria2": 41,
-    "AU": 4,
+    "all": 5073,
+    "vmess": 1835,
+    "vless": 302,
+    "trojan": 771,
+    "ss": 2051,
+    "ssr": 63,
+    "hysteria2": 51,
+    "AU": 1,
     "CA": 7,
-    "DE": 80,
-    "FR": 6,
-    "GB": 1,
-    "HK": 16,
+    "DE": 89,
+    "FR": 5,
+    "GB": 2,
+    "HK": 9,
     "IN": 5,
-    "JP": 158,
-    "KR": 2,
-    "RU": 9,
-    "SG": 23,
-    "TW": 2,
+    "JP": 142,
+    "KR": 5,
+    "RU": 12,
+    "SG": 16,
+    "TW": 1,
     "US": 1510,
     "chatgpt": 0,
     "netflix": 0,
@@ -34,24 +34,24 @@
     "tiktok": 0,
     "streaming": 0
   },
-  "last_probe_at": "2026-11-18T09:28:39+00:00",
+  "last_probe_at": "2026-11-19T09:39:47+00:00",
   "probe": {
-    "node_count": 5059,
-    "unique_hosts": 4505,
+    "node_count": 5073,
+    "unique_hosts": 4481,
     "counts": {
-      "fast": 1826,
-      "medium": 176,
-      "slow": 38,
-      "unreachable": 3019,
-      "keep": 1826,
-      "nekobox": 1494
+      "fast": 1752,
+      "medium": 217,
+      "slow": 69,
+      "unreachable": 3035,
+      "keep": 1752,
+      "nekobox": 1426
     },
-    "probe_seconds": 55.5
+    "probe_seconds": 51.5
   },
   "sanitized_at": "",
   "sanitize": {
-    "input_count": 1826,
-    "kept": 1498,
-    "dropped": 328
+    "input_count": 1752,
+    "kept": 1431,
+    "dropped": 321
   }
 }
